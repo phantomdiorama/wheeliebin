@@ -1,0 +1,45 @@
+#!/usr/bin/env python3
+
+import os
+import shutil
+import sys
+from pathlib import Path
+
+# set folder path
+rubbish_path = Path.home() / "wheeliebin"
+
+# bail if no file
+if len(sys.argv) < 2:
+    print("wheelie bin needs a filepath or command")
+    sys.exit()
+
+# check folder exists
+if rubbish_path.is_dir():
+    pass
+else:
+    rubbish_path.mkdir()
+
+# empty bin
+if sys.argv[1] == "empty":
+    print("Empty wheelie bin? [y/n]")
+    response = input()
+    if response != "y":
+        print("You haven't taken the bins out")
+    else:
+        print("Taking the bins out...")
+        shutil.rmtree(rubbish_path)
+
+# empty bin without confirm
+elif sys.argv[1] == "force":
+    shutil.rmtree(rubbish_path)
+
+# list bin contents
+elif sys.argv[1] == "list":
+    rl = os.listdir(rubbish_path)
+    for i in rl:
+        print(i)
+
+# move to wheelie bin
+else:
+    print("Moving to wheelie bin")
+    shutil.move(sys.argv[1], rubbish_path)
