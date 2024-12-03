@@ -24,7 +24,7 @@ if sys.argv[1] == "empty":
     print("Empty wheelie bin? [y/n]")
     response = input()
     if response != "y":
-        print("You haven't taken the bins out")
+        print("You didn't take the bins out")
     else:
         print("Taking the bins out...")
         shutil.rmtree(rubbish_path)
@@ -41,5 +41,5 @@ elif sys.argv[1] == "list":
 
 # move to wheelie bin
 else:
-    print("Moving to wheelie bin")
+    print(sys.argv[1] + " was binned")
     shutil.move(sys.argv[1], rubbish_path)
