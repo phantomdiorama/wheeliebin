@@ -42,7 +42,7 @@ As ever, Windows is a bit different. There you need to prepend commands
 with py:
 
 ```powershell
-py wb /file/to/delete
+py path/to/wb /file/to/delete
 ```
 
 But you can use a powershell function to avoid this by adding this to your
@@ -50,6 +50,6 @@ $profile:
 
 ```powershell
 function wb {
-  py path\to\wb $args[0]
+  py path/to/wb $args[0]
 }
 ```
