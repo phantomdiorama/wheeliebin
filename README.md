@@ -16,6 +16,12 @@ Move a file or folder into the bin with:
 wb /file/to/delete
 ```
 
+Or move a glob
+
+```bash
+wb *.txt
+```
+
 List the contents of bin with:
 
 ```bash
@@ -45,8 +51,7 @@ with py:
 py path/to/wb /file/to/delete
 ```
 
-But you can use a powershell function to avoid this by adding this to your
-$profile:
+But you can avoid this by adding a function to your powershell $profile:
 
 ```powershell
 function wb {
