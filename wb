@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+""" move filesinto rubbish folder"""
+
 import os
 import shutil
 import sys
